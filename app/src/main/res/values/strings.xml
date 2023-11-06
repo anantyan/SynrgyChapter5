@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Foodapps</string>
+    <string name="menu_foods">Foods</string>
+    <string name="menu_favorites">Favorites</string>
+    <string name="menu_profile">Profile</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_day_night">Day Night</string>
+    <string name="txt_email">Email</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_register">Register</string>
+    <string name="txt_invalid_login">Either the user hasn\'t registered yet or the email and password are wrong!</string>
+    <string name="txt_success_register">Account registration created successfully!</string>
+    <string name="txt_invalid_register">The registered account has been created!</string>
+    <string name="txt_invalid_profile">Blank profile!</string>
+    <string name="txt_not_null">Cannot be NULL!</string>
+    <string name="txt_not_empty">Can\'t be empty!</string>
+    <string name="txt_not_min_length_6">Minimum 6 characters!</string>
+    <string name="txt_not_alphanumeric">Must contain alpha numeric!</string>
+    <string name="txt_not_min_length_8">Minimum 8 characters!</string>
+    <string name="txt_not_lowercase_and_uppercase">Must contain both Uppercase and Lowercase!</string>
+    <string name="txt_not_email">Invalid email!</string>
+    <string name="txt_profile_title">Title</string>
+    <string name="txt_profile_field">Field</string>
+    <string name="txt_log_out">Log Out</string>
+    <string name="txt_profile">Profile</string>
+    <string name="txt_settings">Settings</string>
+    <string name="txt_change">Change</string>
+    <string name="txt_success_change_profile">Account updated successfully!</string>
+    <string name="txt_invalid_change_profile">Account failed to update!</string>
+    <string name="txt_change_profile">Change Profile</string>
+    <string name="txt_save">Save</string>
+</resources>
