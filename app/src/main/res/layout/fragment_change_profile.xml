@@ -53,7 +53,7 @@
                     android:id="@+id/txt_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Username"
+                    android:hint="@string/txt_username"
                     android:inputType="text"
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>

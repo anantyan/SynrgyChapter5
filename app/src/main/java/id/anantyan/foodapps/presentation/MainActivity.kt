@@ -67,6 +67,10 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
                 }
             }
         }.flowWithLifecycle(lifecycle).launchIn(lifecycleScope)
+
+        viewModel.getTranslate().onEach {
+            val translate = if (it) "en" else "in"
+        }.flowWithLifecycle(lifecycle).launchIn(lifecycleScope)
     }
 
     override fun onDestinationChanged(
@@ -79,6 +83,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
             R.id.profileFragment -> binding.bottomNav.isVisible = true
             R.id.favoriteFragment -> binding.bottomNav.isVisible = true
             R.id.changeProfileFragment -> binding.bottomNav.isVisible = true
+            R.id.settingFragment -> binding.bottomNav.isVisible = true
             else -> binding.bottomNav.isVisible = false
         }
     }

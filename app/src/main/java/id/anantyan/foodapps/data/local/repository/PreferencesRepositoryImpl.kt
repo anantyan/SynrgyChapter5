@@ -16,9 +16,18 @@ class PreferencesRepositoryImpl(private val context: Context) : PreferencesRepos
     companion object {
         private const val DATASTORE_SETTINGS: String = "SETTINGS"
         private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(DATASTORE_SETTINGS)
+        private val TRANSLATE = booleanPreferencesKey("TRANSLATE")
         private val THEME_DAY_NIGHT = booleanPreferencesKey("DAY_NIGHT_THEME")
         private val LOGIN = booleanPreferencesKey("LOGIN")
         private val USER_ID = longPreferencesKey("USER_ID")
+    }
+
+    override suspend fun setTranslate(value: Boolean) {
+        context.dataStore.setValue(TRANSLATE, value)
+    }
+
+    override fun getTranslate(): Flow<Boolean> {
+        return context.dataStore.getValue(TRANSLATE, false)
     }
 
     override suspend fun setTheme(value: Boolean) {

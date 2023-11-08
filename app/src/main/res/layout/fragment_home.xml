@@ -6,30 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".presentation.home.HomeFragment">
 
-    <com.google.android.material.tabs.TabLayout
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tabGravity="fill"
-        app:tabIndicatorGravity="bottom">
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Monday" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tuesday" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Wednesday"
-            tools:layout_editor_absoluteX="277dp"
-            tools:layout_editor_absoluteY="52dp" />
-    </com.google.android.material.tabs.TabLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

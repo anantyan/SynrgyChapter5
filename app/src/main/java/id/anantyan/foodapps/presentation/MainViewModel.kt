@@ -16,4 +16,8 @@ class MainViewModel(
     fun getTheme(): Flow<Boolean> {
         return preferencesUseCase.executeGetTheme()
     }
+
+    fun getTranslate(): Flow<Boolean> {
+        return preferencesUseCase.executeGetTranslate()
+    }
 }

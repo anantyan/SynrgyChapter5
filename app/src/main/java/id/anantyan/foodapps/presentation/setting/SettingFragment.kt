@@ -5,14 +5,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import id.anantyan.foodapps.data.local.repository.PreferencesRepositoryImpl
 import id.anantyan.foodapps.databinding.FragmentSettingBinding
+import id.anantyan.foodapps.di.SettingFactory
+import id.anantyan.foodapps.domain.repository.PreferencesUseCase
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
-class SettingFragment : Fragment() {
+class SettingFragment : BottomSheetDialogFragment() {
 
-    private lateinit var viewModel: SettingViewModel
     private var _binding: FragmentSettingBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: SettingViewModel by viewModels {
+        SettingFactory(PreferencesUseCase(PreferencesRepositoryImpl(requireContext())))
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,7 +36,29 @@ class SettingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SettingViewModel::class.java)
+        bindObserver()
+        bindView()
+    }
+
+    private fun bindView() {
+        binding.btnTheme.setOnCheckedChangeListener { _, b ->
+            viewModel.setTheme(b)
+        }
+
+        binding.btnTranslate.setOnCheckedChangeListener { _, b ->
+            viewModel.setTranslate(b)
+        }
+    }
+
+    private fun bindObserver() {
+        viewModel.getTheme.onEach { bool ->
+            binding.btnTheme.isChecked = bool
+        }.flowWithLifecycle(lifecycle).launchIn(lifecycleScope)
+
+        viewModel.getTranslate.onEach { bool ->
+            binding.btnTranslate.text = if (bool) "Indonesia" else "English"
+            binding.btnTranslate.isChecked = bool
+        }.flowWithLifecycle(lifecycle).launchIn(lifecycleScope)
     }
 
     override fun onDestroyView() {

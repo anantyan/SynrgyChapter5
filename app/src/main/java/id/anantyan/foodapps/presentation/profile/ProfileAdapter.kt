@@ -47,7 +47,7 @@ class ProfileAdapter : ListAdapter<ProfileItemModel, ProfileAdapter.ProfileItemM
 
         fun bindItem(item: ProfileItemModel) {
             binding.imageView.setImageResource(item.resId ?: 0)
-            binding.txtTitle.text = item.title
+            binding.txtTitle.text = binding.root.context.getString(item.resStr ?: 0)
             binding.txtField.text = item.field
         }
     }

@@ -34,9 +34,9 @@ class ProfileViewModel(
                     is UIState.Success -> {
                         UIState.Success(
                             listOf(
-                                ProfileItemModel(R.drawable.ic_key_id, "ID", state.data?.id.toString()),
-                                ProfileItemModel(R.drawable.ic_shield_person, "Username", state.data?.username),
-                                ProfileItemModel(R.drawable.ic_email, "Email", state.data?.email)
+                                ProfileItemModel(R.drawable.ic_key_id, R.string.txt_id, state.data?.id.toString()),
+                                ProfileItemModel(R.drawable.ic_shield_person, R.string.txt_username, state.data?.username),
+                                ProfileItemModel(R.drawable.ic_email, R.string.txt_email, state.data?.email)
                             )
                         )
                     }

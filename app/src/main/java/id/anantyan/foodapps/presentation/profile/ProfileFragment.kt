@@ -84,7 +84,10 @@ class ProfileFragment : Fragment() {
             val destination = ProfileFragmentDirections.actionProfileFragmentToChangeProfileFragment()
             findNavController().navigate(destination)
         }
-        binding.btnSettings.setOnClickListener {  }
+        binding.btnSettings.setOnClickListener {
+            val destination = ProfileFragmentDirections.actionProfileFragmentToSettingFragment()
+            findNavController().navigate(destination)
+        }
         binding.btnLogout.setOnClickListener {
             viewModel.logOut()
             val destination = NavGraphMainDirections.actionRootToLoginFragment()

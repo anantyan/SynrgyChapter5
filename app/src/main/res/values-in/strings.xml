@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_foods">Makanan</string>
+    <string name="menu_favorites">Kesukaan</string>
+    <string name="menu_profile">Profil</string>
+    <string name="txt_login">Masuk</string>
+    <string name="txt_day_night">Siang Malam</string>
+    <string name="txt_username">Nama Pengguna</string>
+    <string name="txt_email">Surel</string>
+    <string name="txt_password">Kata Sandi</string>
+    <string name="txt_register">Daftar</string>
+    <string name="txt_invalid_login">Entah pengguna belum mendaftar atau email dan kata sandi salah!</string>
+    <string name="txt_success_register">Pendaftaran akun berhasil dibuat!</string>
+    <string name="txt_invalid_register">Akun terdaftar telah dibuat!</string>
+    <string name="txt_invalid_profile">Profil kosong!</string>
+    <string name="txt_not_null">Tidak boleh NULL!</string>
+    <string name="txt_not_empty">Tidak boleh kosong!</string>
+    <string name="txt_not_min_length_6">Minimal 6 karakter!</string>
+    <string name="txt_not_alphanumeric">Harus mengandung angka alfa!</string>
+    <string name="txt_not_min_length_8">Minimal 8 karakter!</string>
+    <string name="txt_not_lowercase_and_uppercase">Harus mengandung Huruf Besar dan Huruf Kecil!</string>
+    <string name="txt_not_email">Email tidak valid!</string>
+    <string name="txt_profile_title">Judul</string>
+    <string name="txt_profile_field">Bidang</string>
+    <string name="txt_log_out">Keluar</string>
+    <string name="txt_profile">Profil</string>
+    <string name="txt_settings">Pengaturan</string>
+    <string name="txt_change">Ganti</string>
+    <string name="txt_success_change_profile">Akun berhasil diperbarui!</string>
+    <string name="txt_invalid_change_profile">Akun gagal diperbarui!</string>
+    <string name="txt_change_profile">Ganti Profil</string>
+    <string name="txt_save">Simpan</string>
+    <string name="txt_translate">Terjemahkan</string>
+</resources>

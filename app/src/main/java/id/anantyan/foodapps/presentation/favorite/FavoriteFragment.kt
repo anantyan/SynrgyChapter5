@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import id.anantyan.foodapps.databinding.FragmentFavoriteBinding
 
 class FavoriteFragment : Fragment() {
@@ -26,6 +28,13 @@ class FavoriteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().onBackPressedDispatcher.addCallback(onBackPressedCallback())
+    }
+
+    private fun onBackPressedCallback() = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            findNavController().navigateUp()
+        }
     }
 
     override fun onDestroyView() {

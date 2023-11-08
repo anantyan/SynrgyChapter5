@@ -84,10 +84,18 @@
         <action
             android:id="@+id/action_profileFragment_to_changeProfileFragment"
             app:destination="@id/changeProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
     </fragment>
     <dialog
         android:id="@+id/changeProfileFragment"
         android:name="id.anantyan.foodapps.presentation.change_profile.ChangeProfileFragment"
         android:label="fragment_change_profile"
         tools:layout="@layout/fragment_change_profile" />
+    <dialog
+        android:id="@+id/settingFragment"
+        android:name="id.anantyan.foodapps.presentation.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
 </navigation>
