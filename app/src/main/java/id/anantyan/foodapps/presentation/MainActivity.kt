@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isVisible
@@ -16,12 +17,15 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import id.anantyan.foodapps.NavGraphMainDirections
 import id.anantyan.foodapps.R
+import id.anantyan.foodapps.common.updateResources
+import id.anantyan.foodapps.common.updateResourcesLegacy
 import id.anantyan.foodapps.data.local.repository.PreferencesRepositoryImpl
 import id.anantyan.foodapps.databinding.ActivityMainBinding
 import id.anantyan.foodapps.di.MainFactory
 import id.anantyan.foodapps.domain.repository.PreferencesUseCase
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import java.util.Locale
 
 class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedListener {
 
@@ -70,7 +74,13 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
 
         viewModel.getTranslate().onEach {
             val translate = if (it) "en" else "in"
+            updateResources(this, translate)
         }.flowWithLifecycle(lifecycle).launchIn(lifecycleScope)
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        val base = updateResources(newBase, Locale.getDefault().language)
+        super.attachBaseContext(base)
     }
 
     override fun onDestinationChanged(
