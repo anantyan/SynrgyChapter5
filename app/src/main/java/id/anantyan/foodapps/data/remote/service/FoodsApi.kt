@@ -5,6 +5,7 @@ import id.anantyan.foodapps.data.remote.model.RecipesResponse
 import id.anantyan.foodapps.data.remote.network.AppNetwork.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface FoodsApi {
@@ -16,9 +17,9 @@ interface FoodsApi {
         @Query("apiKey") apiKey: String? = API_KEY
     ): Response<RecipesResponse>
 
-    @GET("recipes/{id}")
+    @GET("recipes/{id}/information")
     suspend fun result(
-        @Query("id") id: Int? = -1,
+        @Path("id") id: Int? = -1,
         @Query("apiKey") apiKey: String? = API_KEY
     ): Response<RecipeResponse>
 }

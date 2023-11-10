@@ -32,7 +32,7 @@ data class RecipeResponse(
 	@field:SerializedName("extendedIngredients")
 	val extendedIngredients: List<ExtendedIngredientsItem>? = null
 ) {
-	val image get() = "${BASE_IMAGE}$_image"
+	val image get() = _image
 }
 
 data class AnalyzedInstructionsItem(

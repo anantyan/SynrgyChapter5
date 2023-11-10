@@ -31,4 +31,20 @@
     <string name="txt_change_profile">Ganti Profil</string>
     <string name="txt_save">Simpan</string>
     <string name="txt_translate">Terjemahkan</string>
+    <string name="txt_invalid_get_results">Permintaan tidak valid Makanan Api!</string>
+    <string name="txt_value_default">Standar</string>
+    <string name="txt_value_main_course">Menu Utama</string>
+    <string name="txt_value_side_dish">Lauk Pauk</string>
+    <string name="txt_value_dessert">Makanan Penutup</string>
+    <string name="txt_value_appetizer">Hidangan Pembuka</string>
+    <string name="salad">Salada</string>
+    <string name="bread">Roti-rotian</string>
+    <string name="breakfast">Sarapan</string>
+    <string name="soup">Sup</string>
+    <string name="beverage">Makanan dan Minuman</string>
+    <string name="sauce">Saus</string>
+    <string name="marinade">Bumbu</string>
+    <string name="fingerfood">Makanan Kecil</string>
+    <string name="snack">Cemilan</string>
+    <string name="drink">Minuman</string>
 </resources>

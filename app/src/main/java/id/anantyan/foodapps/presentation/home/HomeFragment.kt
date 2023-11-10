@@ -96,12 +96,13 @@ class HomeFragment : Fragment() {
                 }
                 is UIState.Success -> {
                     binding.progressBar.isVisible = false
-                    binding.imgViewFavorite.isVisible = false
-                    binding.rvHome.isVisible = true
                     adapter.submitList(state.data)
                     if (state.data?.isEmpty() == true) {
                         binding.imgViewFavorite.isVisible = true
                         binding.rvHome.isVisible = false
+                    } else {
+                        binding.imgViewFavorite.isVisible = false
+                        binding.rvHome.isVisible = true
                     }
                 }
                 is UIState.Error -> {

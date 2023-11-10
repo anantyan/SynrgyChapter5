@@ -58,7 +58,7 @@ class HomeCategoriesAdapter :
         }
 
         fun bindItem(item: HomeCategoriesModel) {
-            binding.root.text = item.value
+            binding.root.text = binding.root.context.getString(item.valueResId ?: 0)
         }
     }
 
