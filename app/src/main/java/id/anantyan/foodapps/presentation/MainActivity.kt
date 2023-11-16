@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         }.flowWithLifecycle(lifecycle).launchIn(lifecycleScope)
 
         viewModel.getTranslate().onEach {
-            val translate = if (it) "en" else "in"
+            val translate = if (it) "in" else "en"
             updateResources(this, translate)
         }.flowWithLifecycle(lifecycle).launchIn(lifecycleScope)
     }

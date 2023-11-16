@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -14,8 +12,12 @@ import id.anantyan.foodapps.data.local.repository.PreferencesRepositoryImpl
 import id.anantyan.foodapps.databinding.FragmentSettingBinding
 import id.anantyan.foodapps.di.SettingFactory
 import id.anantyan.foodapps.domain.repository.PreferencesUseCase
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class SettingFragment : BottomSheetDialogFragment() {
 

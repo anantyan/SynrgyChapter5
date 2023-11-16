@@ -3,8 +3,11 @@ package id.anantyan.foodapps.presentation.setting
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import id.anantyan.foodapps.domain.repository.PreferencesUseCase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class SettingViewModel(private val preferencesUseCase: PreferencesUseCase) : ViewModel() {
     val getTheme: Flow<Boolean> = preferencesUseCase.executeGetTheme()
